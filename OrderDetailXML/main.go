@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"database/sql"
 	"encoding/xml"
 	"log"
@@ -107,7 +108,7 @@ func getOrders(w http.ResponseWriter, r *http.Request) {
 // Main function
 func main() {
 
-	db, err = sql.Open("mysql", "root:nadipw@tcp(127.0.0.1:3306)/northwind")
+	db, err = sql.Open("mysql", "root:0000@tcp(127.0.0.1:3306)/northwind")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -119,7 +120,7 @@ func main() {
 
 	// Route handles & endpoints
 	r.HandleFunc("/orders", getOrders).Methods("GET")
-	
+	fmt.Println("Server on :8080")
 	// Start server
 	log.Fatal(http.ListenAndServe(":8080", r))
 }

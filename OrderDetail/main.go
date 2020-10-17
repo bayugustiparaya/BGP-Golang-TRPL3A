@@ -109,7 +109,7 @@ func getOrders(w http.ResponseWriter, r *http.Request) {
 // Main function
 func main() {
 
-	db, err = sql.Open("mysql", "root:nadipw@tcp(127.0.0.1:3306)/northwind")
+	db, err = sql.Open("mysql", "root:0000@tcp(127.0.0.1:3306)/northwind")
 	if err != nil {
 		panic(err.Error())
 	}
