@@ -1,4 +1,4 @@
-# BGP-Golang-TRPL3A \
+# BGP-Golang-TRPL3A 
 
 Dokumenatasi / *source* Tugas Mata Kuliah **Project 2** (*Web Programming*)\
 Bayu Gusti Paraya [link to touch!](http://itsbabay.xyz/)\
