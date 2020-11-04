@@ -26,6 +26,13 @@ func initHandlers() {
 	http.Handle(fmt.Sprintf("%s/orders", root), httptransport.NewServer(
 		transport.OrderEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
 	))
+	// menambahkan request untuk customer dan product
+	http.Handle(fmt.Sprintf("%s/customers", root), httptransport.NewServer(
+		transport.CustomerEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
+	))
+	http.Handle(fmt.Sprintf("%s/products", root), httptransport.NewServer(
+		transport.ProductEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
+	))
 	
 }
 
