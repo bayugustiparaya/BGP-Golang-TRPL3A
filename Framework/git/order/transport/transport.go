@@ -8,76 +8,43 @@ import (
 	"net/http/httputil"
 
 	cm "BGP-Golang-TRPL3A/Framework/git/order/common"
+
 	ex "BGP-Golang-TRPL3A/Framework/git/order/error"
+
 	log "github.com/Sirupsen/logrus"
 )
 
 func DecodeRequest(ctx context.Context, r *http.Request) (interface{}, error) {
 	var body []byte
+
 	requestDump, err := httputil.DumpRequest(r, true)
 	if err != nil {
 		log.WithField("error", err).Error("Exception caught")
 	}
 	log.Debug(string(requestDump))
+
 	//request.IPAddress = r.RemoteAddr
+
 	//decode request body
 	body, err = ioutil.ReadAll(r.Body)
 	log.WithField("info", string(body[:])).Info("Decode Request Simobi Payment API")
 	if err != nil {
 		return ex.Error(err, 100).Rem("Unable to read request body"), nil
 	}
+
+	
 	var request cm.Message
+
 	if err = json.Unmarshal(body, &request); err != nil {
 		return ex.Error(err, 100).Rem("Failed decoding json message"), nil
 	}
+
 	return request, nil
+	
 	//return nil, nil
 }
 
-// add decode from json to customer , product
-func DecodeCustomerRequest(ctx context.Context, r *http.Request) (interface{}, error) {
-	var body []byte
-	requestDump, err := httputil.DumpRequest(r, true)
-	if err != nil {
-		log.WithField("error", err).Error("Exception caught")
-	}
-	log.Debug(string(requestDump))
-	//request.IPAddress = r.RemoteAddr
-	//decode request body
-	body, err = ioutil.ReadAll(r.Body)
-	log.WithField("info", string(body[:])).Info("Decode Request Customer API")
-	if err != nil {
-		return ex.Error(err, 100).Rem("Unable to read request body"), nil
-	}
-	var request cm.Customer
-	if err = json.Unmarshal(body, &request); err != nil {
-		return ex.Error(err, 100).Rem("Failed decoding json message"), nil
-	}
-	return request, nil
-	//return nil, nil
-}
 
-func DecodeProductRequest(ctx context.Context, r *http.Request) (interface{}, error) {
-	var body []byte
-	requestDump, err := httputil.DumpRequest(r, true)
-	if err != nil {
-		log.WithField("error", err).Error("Exception caught")
-	}
-	log.Debug(string(requestDump))
-	//request.IPAddress = r.RemoteAddr
-	//decode request body
-	body, err = ioutil.ReadAll(r.Body)
-	log.WithField("info", string(body[:])).Info("Decode Request Product API")
-	if err != nil {
-		return ex.Error(err, 100).Rem("Unable to read request body"), nil
-	}
-	var request cm.Product
-	if err = json.Unmarshal(body, &request); err != nil {
-		return ex.Error(err, 100).Rem("Failed decoding json message"), nil
-	}
-	return request, nil	
-	//return nil, nil
-}
 
 func EncodeResponse(ctx context.Context, w http.ResponseWriter, response interface{}) error {
 	var body []byte
@@ -85,7 +52,9 @@ func EncodeResponse(ctx context.Context, w http.ResponseWriter, response interfa
 	if err != nil {
 		return err
 	}
+
 	w.Header().Set("Content-Type", "application/json")
+
 	if _, ok := response.(int); ok {
 		//respond back to backend
 		var e = response.(int)
@@ -99,6 +68,8 @@ func EncodeResponse(ctx context.Context, w http.ResponseWriter, response interfa
 	} else if _, ok := response.(int); ok {
 		w.WriteHeader(http.StatusOK)
 	}
+
 	_, err = w.Write(body)
+
 	return err
 }

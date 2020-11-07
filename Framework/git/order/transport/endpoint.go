@@ -32,23 +32,4 @@ func OrderEndpoint(svc services.PaymentServices) endpoint.Endpoint {
 	}
 }
 
-// add endpoint (product, customer)
-func CustomerEndpoint(svc services.PaymentServices) endpoint.Endpoint {
-	return func(ctx context.Context, request interface{}) (interface{}, error) {
-		if req, ok := request.(cm.Customer); ok {
-			return svc.CustomerHandler(ctx, req), nil
-		}
-		log.WithField("Error", request).Info("Request in in unkwon format")
-		return invalidRequest(), nil
-	}
-}
 
-func ProductEndpoint(svc services.PaymentServices) endpoint.Endpoint {
-	return func(ctx context.Context, request interface{}) (interface{}, error) {
-		if req, ok := request.(cm.Product); ok {
-			return svc.ProductHandler(ctx, req), nil
-		}
-		log.WithField("Error", request).Info("Request in in unkwon format")
-		return invalidRequest(), nil
-	}
-}

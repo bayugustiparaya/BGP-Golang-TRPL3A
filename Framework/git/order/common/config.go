@@ -27,8 +27,6 @@ import (
 type Configuration struct {
 	ListenPort      string `yaml:"listenPort"`
 	RootURL         string `yaml:"rootUrl"`
-	RootURLCustomer	string `yaml:"rootUrlCustomer"`
-	RootURLProduct	string `yaml:"rootUrlProduct"`
 	Connection struct {
 		Host     string `yaml:"host"`
 		Port     int    `yaml:"port"`
