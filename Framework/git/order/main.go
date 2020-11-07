@@ -26,12 +26,16 @@ func initHandlers() {
 	http.Handle(fmt.Sprintf("%s/orders", root), httptransport.NewServer(
 		transport.OrderEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
 	))
-	// menambahkan request untuk customer dan product
-	http.Handle(fmt.Sprintf("%s/customers", root), httptransport.NewServer(
-		transport.CustomerEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
+
+	// menambahkan request api untuk customer dan product
+	rootCustomer := cm.Config.RootURLCustomer
+	http.Handle(fmt.Sprintf("%s/customers", rootCustomer), httptransport.NewServer(
+		transport.CustomerEndpoint(svc), transport.DecodeCustomerRequest, transport.EncodeResponse,
 	))
-	http.Handle(fmt.Sprintf("%s/products", root), httptransport.NewServer(
-		transport.ProductEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
+
+	rootProduct := cm.Config.RootURLProduct
+	http.Handle(fmt.Sprintf("%s/products", rootProduct), httptransport.NewServer(
+		transport.ProductEndpoint(svc), transport.DecodeProductRequest, transport.EncodeResponse,
 	))
 	
 }
