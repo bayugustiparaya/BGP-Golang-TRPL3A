@@ -17,7 +17,6 @@ import (
 
 func initHandlers() {
 	var svc services.PaymentServices
-
 	svc = services.PaymentService{}
 	svc = middleware.BasicMiddleware()(svc)
 
@@ -27,6 +26,16 @@ func initHandlers() {
 		transport.OrderEndpoint(svc), transport.DecodeRequest, transport.EncodeResponse,
 	))
 	
+	// menambahkan request untuk customer dan product
+	rootCustomer := cm.Config.RootURLCustomer
+	http.Handle(fmt.Sprintf("%s/customers", rootCustomer), httptransport.NewServer(
+		transport.CustomerEndpoint(svc), transport.DecodeCustomerRequest, transport.EncodeResponse,
+	))
+
+	rootProduct := cm.Config.RootURLProduct
+	http.Handle(fmt.Sprintf("%s/products", rootProduct), httptransport.NewServer(
+		transport.ProductEndpoint(svc), transport.DecodeProductRequest, transport.EncodeResponse,
+	))
 }
 
 var logger *log.Entry
@@ -35,7 +44,6 @@ func initLogger() {
 	log.SetFormatter(&log.JSONFormatter{
 		TimestampFormat: "2006-01-02 15:04:05.999",
 	})
-
 	//log.SetReportCaller(true)
 }
 
