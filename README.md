@@ -30,4 +30,7 @@ TI - PNP
 9. Membuat customer handler, dimana salah satunya untuk menghandel atau eksekusi pengambilan data customer dg query sql . [add customer handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/c8247cbb4485bf1024ac67be78fe32464317adcb) <br>_loc file:_ /Framework/git/order/services/handler_customer.go
 10. Membuat product handler, dimana salah satunya untuk menghandel atau eksekusi pengambilan data product dg query sql . [add product handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/a681c8243d2698c2f46250cbb5345512997553a0) <br>_loc file:_ /Framework/git/order/services/handler_product.go
 11. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add middleware ](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/7eef7f7fc35ad5040aa5300363fd1b8d77a9aa76) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
-.
+
+<br>
+
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
