@@ -11,6 +11,8 @@ import (
 //SubscriberServices is service definition
 type PaymentServices interface {
 	OrderHandler(context.Context, cm.Message) cm.Message
+	CustomerHandler(context.Context, cm.Customer) cm.Customer
+	ProductHandler(context.Context, cm.Product) cm.Product
 }
 
 type PaymentService struct{}
