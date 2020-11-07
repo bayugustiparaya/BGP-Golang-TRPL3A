@@ -33,6 +33,7 @@ type Result struct {
 	Remark string `json:"remark,omitempty"`
 }
 
+// add strcut customer n product (menambahkan struct customer dan product)
 type Customer struct {
 	CustomerID   string `json:"customerID"`
 	CompanyName  string `json:"companyName"`
