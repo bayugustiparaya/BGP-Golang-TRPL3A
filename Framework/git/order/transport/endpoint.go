@@ -47,3 +47,13 @@ func ProductEndpoint(svc services.PaymentServices) endpoint.Endpoint {
 		return invalidRequest(), nil
 	}
 }
+
+func FastpayEndpoint(svc services.PaymentServices) endpoint.Endpoint {
+	return func(ctx context.Context, request interface{}) (interface{}, error) {
+		if req, ok := request.(cm.FastPayRequest); ok {
+			return svc.FastPayHandler(ctx, req), nil
+		}
+		log.WithField("Error", request).Info("Request in in unkwon format")
+		return invalidRequest(), nil
+	}
+}
