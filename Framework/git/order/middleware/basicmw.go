@@ -42,3 +42,11 @@ func (mw BasicMiddlewareStruct) ProductHandler(ctx context.Context, request cm.P
 	log.WithField("request", request).Info("ProductHandler begins")
 	return mw.PaymentServices.ProductHandler(ctx, request)	
 }
+
+func (mw BasicMiddlewareStruct) FastPayHandler(ctx context.Context, request cm.FastPayRequest) cm.FastPayResponse {
+	defer func(begin time.Time) {
+		log.WithField("execTime", float64(time.Since(begin).Nanoseconds())/float64(1e6)).Info("FastPayHandler ends")
+	}(time.Now())
+	log.WithField("request", request).Info("FastPayHandler begins")
+	return mw.PaymentServices.FastPayHandler(ctx, request)
+}
