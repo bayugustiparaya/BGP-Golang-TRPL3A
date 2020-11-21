@@ -62,4 +62,25 @@ type Product struct {
 	Description			string	`json:"description"`
 }
 
+type FastPayRequest struct {
+	Request    string `json:"request"`
+	Merchant_ID string `json:"merchant_id"`
+	Merchant   string `json:"merchant"`
+	Signature  string `json:"signature"`
+}
+
+type FastPayResponse struct {
+	Response     	string `json:"response"`
+	Merchant_ID   string `json:"merchant_id"`
+	Merchant      string `json:"merchant"`
+	PaymentChan []PaymentChannel   `json:"payment_channel"`	
+	ResponseCode string `json:"response_code"`
+	ResponseDesc string `json:"response_desc"`
+}
+
+type PaymentChannel struct {
+	PgCode    string `json:"pg_code"`
+	PgName   	string `json:"pg_name"`
+}
+
 //End Struct API

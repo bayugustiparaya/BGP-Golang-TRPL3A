@@ -29,6 +29,7 @@ type Configuration struct {
 	RootURL         string `yaml:"rootUrl"`
 	RootURLCustomer	string `yaml:"rootUrlCustomer"`
 	RootURLProduct	string `yaml:"rootUrlProduct"`
+	RootURLData			string `yaml:"rootUrlData"`
 	Connection struct {
 		Host     string `yaml:"host"`
 		Port     int    `yaml:"port"`

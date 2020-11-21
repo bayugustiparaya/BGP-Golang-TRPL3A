@@ -30,7 +30,24 @@ TI - PNP
 9. Membuat customer handler, dimana salah satunya untuk menghandel atau eksekusi pengambilan data customer dg query sql . [add customer handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/c8247cbb4485bf1024ac67be78fe32464317adcb) <br>_loc file:_ /Framework/git/order/services/handler_customer.go
 10. Membuat product handler, dimana salah satunya untuk menghandel atau eksekusi pengambilan data product dg query sql . [add product handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/a681c8243d2698c2f46250cbb5345512997553a0) <br>_loc file:_ /Framework/git/order/services/handler_product.go
 11. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add middleware ](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/7eef7f7fc35ad5040aa5300363fd1b8d77a9aa76) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
-
 <br>
 
 __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
+<br>
+## ~ Materi Pertemuan 8  (Implementasi FastPay dimana JSON request dan responsenya berbeda)
+### + Tugas 5
+1. Menggunakan database [Northwind.sql](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/88190654e62a27e54de25fbb40cc562cf9a5c851) <br>_loc file:_ /Northwind.sql
+2. Menambahkan tabel [northwind.trans](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/98ecf6351801e2f216ff91f5bd651d1c32d31605) <br>_loc file:_ /Northwind.trans.sql
+3. [add rootUrlData on yaml](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/69cc1708379fc58d5d1f90ac873c548c936bf63e) <br>_loc file:_ /Framework/git/order/conf-dev.yml
+4. [add rootUrlData on struct](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/e21c3d4496db039020956d2d2c68975688d7f8fe) . <br>_loc file:_ /Framework/git/order/common/config.go
+5. Menambahkan struct untuk FastPay (request, response dan detail). [add FastPay req res struct](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/607b3d8071f8e2aab1d2a01f9e5c0d09385fd412) <br>_loc file:_ /Framework/git/order/common/global.go
+6. Menambahkan url api untuk FastPay. [add FastPay url](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/0d5ecf73ab4cffdc809695a7f8486bfca7fe1fba) <br>_loc file:_ /Framework/git/order/main.go
+7. Menambahkan endpoint untuk FastPay. [add FastPay ENdpoint](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/e8b49bda83d7dee893e9610835f385e7e4bb4149) <br>_loc file:_ /Framework/git/order/transport/endpoint.go
+8. Menambahkan decode request dari json ke FastPay. [add DecodeFastPayRequest](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/4835f16010e4d8937d8579cb2ba2ee4ef382eb62) <br>_loc file:_ /Framework/git/order/transport/transport.go
+9. Menambahkan item interface untuk FastPay. [add fastpay interface item](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/0f03623934a1630c6c25bbfdbc91dcb3c17756a6) <br>_loc file:_ /Framework/git/order/services/services.go
+10. Membuat FastPay handler, dimana salah satunya untuk menghandel atau eksekusi pengambilan data customer dg query sql . [add fastpay handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/ee49cd58a3dccd377dc80b148ba002fa421bffe4) <br>_loc file:_ /Framework/git/order/services/handler.fastpay.go
+11. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add fastpay middleware](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/e3be241522566ce129c8d35ce1927f5c142d426a) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
+<br>
+
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
+<br>
