@@ -49,5 +49,5 @@ __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpos
 11. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add fastpay middleware](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/e3be241522566ce129c8d35ce1927f5c142d426a) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
 <br>
 
-__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#d913b084-1cd1-42f7-9145-df8435dce105)__
 <br>
