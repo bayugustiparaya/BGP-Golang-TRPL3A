@@ -36,6 +36,11 @@ func initHandlers() {
 	http.Handle(fmt.Sprintf("%s/products", rootProduct), httptransport.NewServer(
 		transport.ProductEndpoint(svc), transport.DecodeProductRequest, transport.EncodeResponse,
 	))
+
+	rootData := cm.Config.RootURLData
+	http.Handle(fmt.Sprintf("%s/fastpay", rootData), httptransport.NewServer(
+		transport.FastpayEndpoint(svc), transport.DecodeFastpayRequest, transport.EncodeResponse,
+	))
 }
 
 var logger *log.Entry
