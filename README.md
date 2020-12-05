@@ -51,7 +51,6 @@ __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpos
 
 __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
 <br>
-<br>
 ## ~ Materi Pertemuan 9  (eksekusi insert data ke dbms mysql dari response trips)
 ### + Tugas 6
 __Api URL : http://localhost:9000/getOrder/trips__
