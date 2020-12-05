@@ -49,5 +49,23 @@ __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpos
 11. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add fastpay middleware](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/e3be241522566ce129c8d35ce1927f5c142d426a) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
 <br>
 
-__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#d913b084-1cd1-42f7-9145-df8435dce105)__
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/)__
+<br>
+## ~ Materi Pertemuan 9  (eksekusi insert data ke dbms mysql dari response trips)
+### + Tugas 6
+__Api URL : http://localhost:9000/getOrder/trips__
+<br>
+
+1. Menggunakan database [Northwind.sql](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/88190654e62a27e54de25fbb40cc562cf9a5c851) <br>_loc file:_ /Northwind.sql
+2. Menambahkan tabel [Northwind.trips.sql](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/69953b9cb986f0680ec6daf74226ccb9c06a05db) <br>_loc file:_ /Northwind.trips.sql
+3. Menambahkan struct untuk Trips (request, response dan detail). [add Trips req res struct](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/0b5fd647860302fb68e8ac406388bcdde0a601e0) <br>_loc file:_ /Framework/git/order/common/global.go
+4. Menambahkan url api untuk Trips. [add Trips url req](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/05c9567492f83fa5874492987bd8d1c4b1430a9c) <br>_loc file:_ /Framework/git/order/main.go
+5. Menambahkan endpoint untuk Trips. [add Trips Endpoint](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/ae8201e015c0a1ec19de5d27bbf5d177f5aa5990) <br>_loc file:_ /Framework/git/order/transport/endpoint.go
+6. Menambahkan decode request dari json ke Trips. [add DecodeTripRequest](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/11b14ba1307cf2ba32ec86a4f206d96fd45a7105) <br>_loc file:_ /Framework/git/order/transport/transport.go
+7. Menambahkan item interface untuk FastPay. [add trip interface item](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/47db5f09904c5d0ca67d8d2c18c2716e3c3910d6) <br>_loc file:_ /Framework/git/order/services/services.go
+8. Membuat Trips handler, yang berguna untuk menghandel atau eksekusi, pengambilan data trip dari api http://35.186.147.192/travel/GetTripsSample.php dan data disimpan pada tabel northwind.trips . [add trips handler](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/ea679782489446be6ef1775681bd34dcf0f52479) <br>_loc file:_ /Framework/git/order/services/handler_trips.go
+9. Menambahkan middleware , agar controller fokus dalam menyelesaikan logika alur bisnis dari suatu flow aplikasi tanpa harus untuk melakukan hal — hal di luar itu seperti validasi input untuk setiap flow. [add trips middleware](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/2c9bed01b54d5c4c71b3bc015011ef2941618563) <br>_loc file:_ /Framework/git/order/middleware/basicmw.go
+<br>
+
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#a4428df5-4372-4c8f-b1fe-7fc6552d5b65)__
 <br>

@@ -14,6 +14,7 @@ type PaymentServices interface {
 	CustomerHandler(context.Context, cm.Customer) cm.Customer
 	ProductHandler(context.Context, cm.Product) cm.Product
 	FastPayHandler(context.Context, cm.FastPayRequest) cm.FastPayResponse
+	TripsHandler(context.Context, cm.MyTrips) cm.MytripsResponse
 }
 
 type PaymentService struct{}
