@@ -28,3 +28,11 @@ type Employees struct {
 	Title					string `json:"Title"`
 	Address				string `json:"Address"`
 }
+
+type Suppliers struct {
+	SupplierID		string `json:"SupplierID"`
+	CompanyName		string `json:"CompanyName"`
+	ContactName		string `json:"ContactName"`
+	ContactTitle	string `json:"ContactTitle"`
+	Address				string `json:"Address"`
+}
