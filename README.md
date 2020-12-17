@@ -69,3 +69,43 @@ __Api URL : http://localhost:9000/getOrder/trips__
 
 __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#a4428df5-4372-4c8f-b1fe-7fc6552d5b65)__
 <br>
+## ~ Materi Pertemuan 10  (Echo Framework)
+Gambaran Struktur File / Folder<br>
+__Api URL : http://localhost:3000/groupRoute/route__
+```bash
+./common/common.go               | berisi struct json
+./main.go                        | main (file utama)
+  -> ./db/db.go                  | membuat koneksi ke dbms 
+    -> ./config/config.json      | berisi json data dbms
+    -> ./config/config.go        | memanggil config.json
+  -> ./routes/routes.go          | kumpulan group route
+    -> ./routes/group_route.go   | berisi route-route
+      -> ./controllers/nama_controller.go
+        -> ./models/nama_model.go  | inti / core Framework (CRUD)
+          -> ./common/common.go  | berisi struct json
+          -> ./db/db.go          | membuat koneksi 
+-> ./helpers                     | tambahan
+-> ./middleware                  |
+-> ./go.mod                      | semua library yg dibutuhkan
+```
+1. Menambahkan tabel [northwind.users](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/55cd79eb789e18e53f828f3b12b0e5b7dccc2334) <br>_loc file:_ /Northwind.users.sql
+2. Penerapan [pertemuan 10](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/52102fbd1018b3aa7cfc108a343454fea2cf5a2f)
+### + Tugas 7
+1. Menggunakan database [Northwind.sql](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/88190654e62a27e54de25fbb40cc562cf9a5c851) <br>_loc file:_ /Northwind.sql tabel suppliers
+2. Menambahkan [Suppliers struct](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/73e6db805db8381f108a56612d93cd087ba1b35e) pada common. <br>_loc file:_ /echo-rest/common/common.go
+3. Menambahkan group route Suppliers. [add suppliers route group](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/cff6564ed1ae30bdc236bbba8c227245713a8b1c) <br>_loc file:_ /echo-rest/routes/routes.go
+4. Membuat route route Supplier pada 1 file. [add suppliers_route](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/84a985dc20a8a2336b33657de57b76cd74c8339d) <br>_loc file:_ /echo-rest/routes/suppliers_route.go
+5. Membuat Supplier Controller. [add supplier_controller](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/37098b28e1aaaa1c7249aae386e0cf6c53549f68) <br>_loc file:_ /echo-rest/controllers/supplier_controller.go
+6. Membuat model / proses CRUD Suppliers. [add suppliers_model](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/be83460c8cf377e7091c441c54244e3aaf81a5c3) <br>_loc file:_ /echo-rest/models/suppliers_model.go
+<br>
+__POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#a4428df5-4372-4c8f-b1fe-7fc6552d5b65)__
+<br>
+```javascript
+API URL menggunakan Method POST
+Bentuk Umum : http://localhost:3000/groupRoute/route
+http://localhost:3000/suppliers/add
+http://localhost:3000/suppliers/list
+http://localhost:3000/suppliers/update
+http://localhost:3000/suppliers/delete
+```
+<br>
