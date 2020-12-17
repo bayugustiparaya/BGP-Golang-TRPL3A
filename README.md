@@ -99,7 +99,7 @@ __Api URL : http://localhost:3000/groupRoute/route__
 6. Membuat model / proses CRUD Suppliers. [add suppliers_model](https://github.com/bayugustiparaya/BGP-Golang-TRPL3A/commit/be83460c8cf377e7091c441c54244e3aaf81a5c3) <br>_loc file:_ /echo-rest/models/suppliers_model.go
 <br>
 __POSTMAN Api Dokumentasi silahkan lihat disini [link](https://documenter.getpostman.com/view/7157328/TVYF8Jsh/#a4428df5-4372-4c8f-b1fe-7fc6552d5b65)__
-<br>
+<br><br>
 ```javascript
 API URL menggunakan Method POST
 Bentuk Umum : http://localhost:3000/groupRoute/route
